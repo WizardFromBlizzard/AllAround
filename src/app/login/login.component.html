@@ -1,9 +1,16 @@
-<form>
-    <label for="username">Username</label>
-    <input type="text" name="username" #username>
-    
-    <label for="password">Password</label>
-    <input type="text" name="password" #password>
 
-    <button type="submit" (click)="onSubmit(username.value, password.value)">Submit</button>
-</form>
+
+<div class="form-container">
+    <form>
+        <div class="input">
+          <label for="username">Username</label>
+          <input type="text" name="username" #username class="block">
+        </div>
+        
+        <div class="input">
+          <label for="password">Password</label>
+          <input type="text" name="password" #password class="block">
+      </div>
+        <button type="submit" (click)="onSubmit(username.value, password.value)">Submit</button>
+    </form>
+</div>
