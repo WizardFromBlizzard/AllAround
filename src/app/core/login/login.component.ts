@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { User } from 'src/app/models/user';
 import { AuthenticationService } from 'src/app/services/authentication.service';
@@ -17,7 +18,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private auth: AuthenticationService
+    private auth: AuthenticationService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -32,6 +34,8 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     console.log(this.username);
+    sessionStorage.setItem("Token", this.username);
     this.auth.isAuthenticated(this.username);
+    this.router.navigate(["welcome"]);
   }
 }

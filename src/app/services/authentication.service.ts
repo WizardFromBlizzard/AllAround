@@ -25,4 +25,8 @@ export class AuthenticationService {
      
 
   }
+
+   daLiJeRealnaOvaAuthtentikacija() : boolean {
+    return this.isAuth;
+  }
 }
