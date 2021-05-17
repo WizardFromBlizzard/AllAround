@@ -1,0 +1,11 @@
+<form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+  <label for="username">username</label>
+  <input type="text" [(ngModel)]="username" name="username">
+  <button type="submit">Submit</button>
+</form>
+
+<ol>
+  <li *ngFor="let name of names">
+    {{name}}
+  </li>
+</ol>
